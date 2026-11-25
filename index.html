@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python для преподавателя · Генератор билетов</title>
+<style>
+:root{--ink:#19263b;--paper:#f2f5fa;--accent:#bedf74;--blue:#183d99;--line:#d6deea}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);font:1rem/1.55 system-ui,sans-serif;color:var(--ink)}a{color:var(--blue)}header,main,footer{width:min(1120px,92%);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0}header a{text-decoration:none;font-weight:700}nav{display:flex;gap:18px;flex-wrap:wrap}.brand{color:var(--ink)}.hero{background:#122448;color:#fff;border-radius:30px;padding:clamp(26px,5vw,64px);display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:34px}h1{font-size:clamp(2.25rem,5.6vw,4.7rem);letter-spacing:-.055em;line-height:1.02;margin:.25em 0}h2{font-size:clamp(1.7rem,3.4vw,2.55rem);letter-spacing:-.04em;line-height:1.16;margin:.2em 0 .55em}h3{margin:.25em 0}.eyebrow{color:var(--accent);font-weight:650}.hero p{color:#d9e5ff}.button,button{display:inline-block;background:var(--accent);border:0;border-radius:12px;color:#17263a;padding:11px 16px;font:inherit;font-weight:720;text-decoration:none;cursor:pointer}.button:hover,button:hover{background:#d4ef96}.outline{background:#e6eeff;color:var(--blue)}.terminal{background:#0a1630;border:1px solid #475979;border-radius:18px;overflow:hidden}.terminal b{display:block;background:#203354;padding:12px 16px}.terminal pre{margin:0;padding:19px;white-space:pre-wrap;overflow-wrap:anywhere;color:#d6e5ff}.terminal strong{color:var(--accent)}section{margin:46px 0;scroll-margin-top:16px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card,article,.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.card a{font-weight:750;text-decoration:none}.card p{margin:7px 0 0}.lesson{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:14px 0}.lesson h3{font-size:1.35rem}.lesson video{width:100%;aspect-ratio:16/9;background:#122448;border-radius:14px;display:block}.media-title{margin:0 0 8px;font-weight:700}.lab{padding:20px;border-radius:16px;background:#edf2ff}details{margin-top:14px}summary{color:var(--blue);cursor:pointer;font-weight:700}pre{white-space:pre-wrap;overflow-wrap:anywhere}code{font-size:.93em}.actions{display:flex;gap:10px;flex-wrap:wrap}.slide{min-height:150px;padding:15px;border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#f7f9ff}.slide p{margin-bottom:0}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}button:disabled{opacity:.45;cursor:default}footer{padding:0 0 28px;color:#485873}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #3774e1;outline-offset:3px}@media(max-width:720px){.hero,.cards,.lesson{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}.hero{border-radius:20px}section{margin:34px 0}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="#">Python для преподавателя</a><nav aria-label="Разделы сайта"><a href="#lessons">Уроки</a><a href="#program">Рабочая программа</a><a href="#practice">Итоговая работа</a></nav></header>
+<main>
+<section class="hero">
+<div><div class="eyebrow">Практикум по профессии</div><h1>Генератор экзаменационных билетов</h1><p>Создайте 24 билета в Word из списка вопросов. Три урока познакомят с чтением файлов, случайной выборкой и сохранением документа на Python.</p><a class="button" href="#lesson-1">Начать первый урок</a></div>
+<div class="terminal"><b>Пример запуска</b><pre>$ python generator.py
+
+voprosy.txt → generator.py → bilety.docx
+
+<strong>Готово! Создан файл bilety.docx
+с 24 билетами.</strong></pre></div>
+</section>
+<section id="program"><h2>Рабочая программа</h2><div class="panel"><p><strong>Для кого.</strong> Студенты педагогических направлений и преподаватели с базовым знакомством с Python.</p><p><strong>Цель.</strong> Научиться преобразовывать текстовый список в готовый комплект билетов для экзамена.</p><p><strong>Учебный план.</strong> Три занятия по одному академическому часу и один академический час на итоговую работу.</p><p><strong>Что понадобится.</strong> Python 3, текстовый редактор, библиотека <code>python-docx</code> и программа для открытия файлов Word.</p><p><strong>Проверка результата.</strong> Готовый документ содержит 24 пронумерованных билета по три разных вопроса в каждом. Один вопрос может встречаться в разных билетах.</p></div></section>
+<section id="lessons"><h2>Уроки</h2><div class="cards">
+<div class="card"><a href="#lesson-1">1. Список вопросов</a><p>Подготовьте исходный файл.</p></div><div class="card"><a href="#lesson-2">2. Выбор вопросов</a><p>Сформируйте билеты с помощью Python.</p></div><div class="card"><a href="#lesson-3">3. Документ Word</a><p>Запустите генератор и проверьте результат.</p></div>
+</div><div id="lesson-content"></div></section>
+<section id="practice"><h2>Итоговая работа</h2><div class="panel"><ol><li>Скачайте скрипт и образец. Сохраните их в одной папке.</li><li>Замените вопросы в <code>voprosy.txt</code> на 10–15 своих вопросов по учебному предмету.</li><li>Откройте терминал в этой папке и выполните команды.</li></ol><pre><code>python -m pip install python-docx
+python generator.py</code></pre><p>Если команда <code>python</code> не найдена, попробуйте <code>py</code> на Windows или <code>python3</code> на macOS и Linux.</p><p>Откройте <code>bilety.docx</code>. Проверьте количество билетов и убедитесь, что внутри каждого три разных вопроса. Для проверки работы сдайте список вопросов и готовый документ.</p><div class="actions"><a class="button" href="generator.py" download>Скачать скрипт Python</a><a class="button outline" href="voprosy.txt" download>Скачать вопросы</a><a class="button outline" href="bilety.docx" download>Скачать пример билетов</a></div></div></section>
+</main><footer>Учебный веб-проект по дисциплине «Практикум по профессии» · Вячеслав Старостин</footer>
+<script src="lessons.js" defer></script>
+</body></html>
